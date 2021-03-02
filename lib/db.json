@@ -2,21 +2,63 @@
   "books": [
     {
       "reviews": [
-        { "content": "i liked it", "rating": 4 },
-        { "rating": "3", "content": "great" },
-        { "rating": "1", "content": "hated it" },
-        { "rating": "10", "content": "srofgu" }
+        {
+          "content": "i liked it",
+          "rating": 4
+        },
+        {
+          "rating": "3",
+          "content": "great"
+        },
+        {
+          "rating": "1",
+          "content": "hated it"
+        },
+        {
+          "rating": "10",
+          "content": "srofgu"
+        },
+        {
+          "rating": "4",
+          "content": "asdf 123"
+        }
       ],
       "id": 1,
       "title": "Good Book about Javascript"
     },
     {
       "title": "Book about Ruby",
-      "reviews": [{ "rating": "3", "content": "hello" }],
+      "reviews": [
+        {
+          "rating": "3",
+          "content": "hello"
+        },
+        {
+          "rating": "6",
+          "content": "it was decent"
+        }
+      ],
       "id": 2
     },
-    { "title": "Book about Ruby", "reviews": [], "id": 4 },
-    { "title": "Book about Ruby", "reviews": [], "id": 5 },
-    { "title": "Book about Ruby", "reviews": [], "id": 6 }
+    {
+      "title": "Book about Ruby",
+      "reviews": [
+        {
+          "rating": "5",
+          "content": "its decent"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "Book about Ruby",
+      "reviews": [],
+      "id": 5
+    },
+    {
+      "title": "Book about Ruby",
+      "reviews": [],
+      "id": 6
+    }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Rainbow Six",
+      "platforms": [
+        "pc",
+        "ps4",
+        "ps5",
+        "Xbox"
+      ],
+      "ratings": 36,
+      "times rated": 8,
+      "aveRating": 4.5
+    },
+    {
+      "id": 2,
+      "title": "Apex Legends",
+      "platforms": [
+        "pc",
+        "ps4",
+        "ps5",
+        "Xbox"
+      ],
+      "ratings": 25,
+      "times rated": 5,
+      "aveRating": 5
+    },
+    {
+      "id": 3,
+      "title": "Half Life",
+      "platforms": [
+        "pc"
+      ],
+      "ratings": 5,
+      "times rated": 1,
+      "aveRating": 5
+    },
+    {
+      "id": 4,
+      "title": "Call of Duty",
+      "platforms": [
+        "pc",
+        "ps4",
+        "ps5",
+        "Xbox"
+      ],
+      "ratings": 35,
+      "times rated": 7,
+      "aveRating": 5
+    }
+  ]
+}

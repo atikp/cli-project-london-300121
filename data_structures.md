@@ -1,4 +1,4 @@
-# Possible data structure for suggested topics
+<!-- # Possible data structure for suggested topics
 
 Reddit
 
@@ -76,4 +76,122 @@ Recipe organiser
     }
   ]
 }
+``` -->
+```json
+{"games":[
+  {"First Person Shooters": [
+    { 
+      "id":1,
+      "title": "Call of Duty",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":2,
+      "title": "Apex Legends",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":3,
+      "title": "Half Life",
+      "platforms":["pc"],
+      "rating":'';
+    },
+     { 
+      "id":4,
+      "title": "Call of Duty",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    }
+
+  ]},
+
+ {"Third Person Shooters": [
+    { 
+      "id":1,
+      "title": "Fortnite",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":2,
+      "title": "The Division",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":3,
+      "title": "Max Payne",
+      "platforms":["pc"],
+      "rating":'';
+    },
+     { 
+      "id":4,
+      "title": "GTA V",
+      "platforms":["pc","ps4","Xbox"],
+      "rating":'';
+    }
+
+  ]},
+
+   {"Real Time Strategy": [
+    { 
+      "id":1,
+      "title": "StarCraft",
+      "platforms":["pc"],
+      "rating":'';
+    },
+     { 
+      "id":2,
+      "title": "Age Of Empires",
+      "platforms":["pc"],
+      "rating":'';
+    },
+     { 
+      "id":3,
+      "title": "Civilization VI",
+      "platforms":["pc","nintendo switch","ps4","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":4,
+      "title": "Command & Conquer",
+      "platforms":["pc"],
+      "rating":'';
+    }
+
+  ]},
+
+ {"Sports": [
+    { 
+      "id":1,
+      "title": "Fifa 21",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":2,
+      "title": "Madden 21",
+      "platforms":["pc","ps4","ps5","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":3,
+      "title": "NHL 21",
+      "platforms":["ps4","Xbox"],
+      "rating":'';
+    },
+     { 
+      "id":4,
+      "title": "NBA 2k21",
+      "platforms":["pc","ps4","ps5","Xbox","nintendo switch"],
+      "rating":'';
+    }
+
+  ]}
+
+]};
+
+
 ```
