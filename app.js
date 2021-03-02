@@ -6,7 +6,7 @@ const readlineSync = require("readline-sync");
 
 const mainMenuChoice = ["See Game info","Add New Game", "Remove Game"];
 const gameRatings = [1,2,3,4,5]
-const newGame = {"id": '', "title": '', "platforms":[],"rating":0,"times Rated":0};
+const newGame = {"id": '', "title": '', "platforms":[],"ratings":0,"times rated":0,"aveRating":0};
 
 let games = API.read("games");
 const gamesTitles = games.map(game => `\n ${game.title}`);
@@ -42,7 +42,7 @@ const seeGameListForInfo = () => {
     ratingToPush = eval(gameRatings[givenRating]+currenRating);
     currenRating = ratingToPush;
     ratedTimes = gameName["times rated"];
-    ratedTimes+=1;
+    ratedTimes= ratedTimes+1;
     console.log(ratedTimes);
     let aveRating =eval(ratingToPush/ratedTimes);
     aveRating = Math.round(aveRating*10)/10
@@ -60,25 +60,48 @@ const seeGameListForInfo = () => {
   
   }
   rateGame();
+  mainMenu()
 }
 let newPlatformsArray = [];
 let addNewGame = () => {
-    const newTitle = readlineSync.question("What is your game title?");
-    const newPlatforms = readlineSync.question("which Platform(s) is your game on?");
-    const stringToArray = (str) => 
-      str.trim().split(" ")
-    
-    newPlatformsArray = stringToArray(newPlatforms);
 
+    const newId = games.length +1;
+    const newTitle = readlineSync.question("What is your game title?");
+    const newPlatforms = readlineSync.question("which Platform(s) is your game on?(seperate with spaces if multiple) ");
+
+    const stringToArray = (str) => str.trim().split(" ");
+
+    newPlatformsArray = stringToArray(newPlatforms);
     console.log(newPlatformsArray);
 
+    newGame.id = newId;
+    newGame.title = newTitle;
+    newGame.platforms = newPlatformsArray;
 
+    API.create("games", newGame);
 
+    mainMenu();
 }
 
-// let removeGame = () => {
+let removeGame = () => {
+  const gameSelected = readlineSync.keyInSelect(gamesTitles, "Which game would you like to delete?",{cancel:'Back to Main Menu'})
+  const gameName = games[gameSelected];
 
-// }
+  if(gamesTitles[gameSelected] == undefined){
+    mainMenu();
+  } else {
+    console.log(gameName);
+  }
+
+  if(readlineSync.keyInYN('Are you sure you want to PERMANENTLY delete this game and all its info? (Y/N)')) {
+    console.log(gamesTitles[gameSelected] + " has been Deleted")
+    API.destroy("games",gameName);
+    mainMenu();
+  } else {
+    mainMenu();
+  }
+
+}
 // function calculateAverageRating(book) {
 //   let total = 0;
 //   for (const review of book.reviews) {
