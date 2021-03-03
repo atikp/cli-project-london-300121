@@ -8,10 +8,11 @@ const mainMenuChoice = ["See Game info","Add New Game", "Remove Game"];
 const gameRatings = [1,2,3,4,5]
 const newGame = {"id": '', "title": '', "platforms":[],"ratings":0,"times rated":0,"aveRating":0};
 
-let games = API.read("games");
+const games = API.read("games");
 const gamesTitles = games.map(game => `\n ${game.title}`);
 
 const mainMenu = () => {
+  console.log("====MAIN MENU====");
   const initChoice = readlineSync.keyInSelect(mainMenuChoice, "What would you like to do?");
   if(initChoice == 0) {
     seeGameListForInfo();
@@ -20,12 +21,13 @@ const mainMenu = () => {
   } else if(initChoice ==2){
     removeGame();
   } else if(mainMenuChoice[initChoice] == undefined){
-    console.log("OK Bye :)")
+    console.log("ENJOY YOUR GAME :)")
   }
 
 }
 
 const seeGameListForInfo = () => {
+  console.log("====GAME LIST====");
   const gameSelected = readlineSync.keyInSelect(gamesTitles, "Which game would you like to see more info about?",{cancel:'Back to Main Menu'})
   const gameName = games[gameSelected];
  
@@ -36,9 +38,14 @@ const seeGameListForInfo = () => {
   }
 
  let currenRating = gameName["ratings"];
+
   const rateGame = () => {
-    const givenRating = readlineSync.keyInSelect(gameRatings, "Rate the game between 1-5:")
-    
+    console.log("====GAME RATING====");
+    const givenRating = readlineSync.keyInSelect(gameRatings, "Rate the game between 1-5:",{cancel:'Back to Main Menu'})
+    if(gameRatings[givenRating] == undefined){
+      seeGameListForInfo();
+    }
+
     ratingToPush = eval(gameRatings[givenRating]+currenRating);
     currenRating = ratingToPush;
     ratedTimes = gameName["times rated"];
@@ -63,8 +70,8 @@ const seeGameListForInfo = () => {
   mainMenu()
 }
 let newPlatformsArray = [];
-let addNewGame = () => {
-
+const addNewGame = () => {
+  console.log("====ADD NEW GAME====");
     const newId = games.length +1;
     const newTitle = readlineSync.question("What is your game title?");
     const newPlatforms = readlineSync.question("which Platform(s) is your game on?(seperate with spaces if multiple) ");
@@ -83,23 +90,25 @@ let addNewGame = () => {
     mainMenu();
 }
 
-let removeGame = () => {
+const removeGame = () => {
+  console.log("====DELETE GAME====");
   const gameSelected = readlineSync.keyInSelect(gamesTitles, "Which game would you like to delete?",{cancel:'Back to Main Menu'})
   const gameName = games[gameSelected];
+  const gameID = gameSelected+1;
 
   if(gamesTitles[gameSelected] == undefined){
     mainMenu();
   } else {
     console.log(gameName);
-  }
+  };
 
   if(readlineSync.keyInYN('Are you sure you want to PERMANENTLY delete this game and all its info? (Y/N)')) {
     console.log(gamesTitles[gameSelected] + " has been Deleted")
-    API.destroy("games",gameName);
+    API.destroy("games",gameID);3
     mainMenu();
   } else {
     mainMenu();
-  }
+  };
 
 }
 // function calculateAverageRating(book) {

@@ -9,9 +9,9 @@
         "ps5",
         "Xbox"
       ],
-      "ratings": 36,
-      "times rated": 8,
-      "aveRating": 4.5
+      "ratings": 40,
+      "times rated": 9,
+      "aveRating": 4.4
     },
     {
       "id": 2,
@@ -22,9 +22,9 @@
         "ps5",
         "Xbox"
       ],
-      "ratings": 25,
-      "times rated": 5,
-      "aveRating": 5
+      "ratings": null,
+      "times rated": 6,
+      "aveRating": null
     },
     {
       "id": 3,
@@ -48,6 +48,20 @@
       "ratings": 35,
       "times rated": 7,
       "aveRating": 5
+    },
+    {
+      "id": 5,
+      "title": "Doom",
+      "platforms": [
+        "ps4",
+        "ps5",
+        "pc",
+        "xbox",
+        "switch"
+      ],
+      "ratings": 0,
+      "times rated": 0,
+      "aveRating": 0
     }
   ]
 }
