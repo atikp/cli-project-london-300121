@@ -41,7 +41,7 @@ const seeGameListForInfo = () => {
 
   const rateGame = () => {
     console.log("====GAME RATING====");
-    const givenRating = readlineSync.keyInSelect(gameRatings, "Rate the game between 1-5:",{cancel:'Back to Main Menu'})
+    const givenRating = readlineSync.keyInSelect(gameRatings, "Rate the game between 1-5:",{cancel:'Back to GAME List'})
     if(gameRatings[givenRating] == undefined){
       seeGameListForInfo();
     }
